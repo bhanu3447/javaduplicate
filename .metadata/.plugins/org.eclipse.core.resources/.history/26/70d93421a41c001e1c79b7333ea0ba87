@@ -1,0 +1,136 @@
+import java.math.BigInteger;
+import java.util.Scanner;
+
+//public class rgs 
+//{
+//  public static void main(String[] args) 
+//  {
+//	Scanner scn=new Scanner(System.in);
+//	System.out.println("enter a number");
+//	String s=scn.nextLine();
+//	BigInteger input1=new BigInteger(s);
+//	System.out.println("enter a number");
+//	String input2=scn.nextLine();
+//	
+//	
+//	String secretKeyGenerator = secretKeyGenerator(input1, input2);
+//	System.out.println(secretKeyGenerator);
+//
+//  }
+//  
+//  public static String secretKeyGenerator(BigInteger input1,String input2)
+//  {
+//	  StringBuilder sb=new StringBuilder();
+//	  
+//	  String s1 = input1.toString();
+//	  
+//	  int index1=0;
+//	  int index2=input2.length()-1;
+//	  
+//	  
+//	  while(index1<s1.length())
+//	  {
+//		  int i=0;
+//		  boolean even=false;
+//		  
+//		  while(index1<s1.length()&&!even)
+//		  {
+//			  int digit=Character.getNumericValue(s1.charAt(index1));
+//			  i+=digit;
+//			  index1++;
+//			  
+//			  if(i%2==0) even=true;
+//		  }
+//		  
+//		  if(index2>=0)
+//		  {
+//			  char a=input2.charAt(index2);
+//			  sb.append(i).append(a);
+//			  index2--;
+//		  }
+//	  }
+//	  return sb.toString();
+//	  
+//  }
+//  
+//}
+
+import java.util.Scanner;
+
+public class SecretKeyGenerator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a number: ");
+        String input1 = scanner.nextLine();
+        System.out.println("Enter a string: ");
+        String input2 = scanner.nextLine();
+
+        String secretKey = secretKeyGenerator(input1, input2);
+        System.out.println("Secret Key: " + secretKey);
+    }
+
+    public static String secretKeyGenerator(String input1, String input2) {
+        StringBuilder secretKeyBuilder = new StringBuilder();
+
+        int index1 = 0;
+        int index2 = input2.length() - 1;
+        boolean isEven = true;
+
+        while (index1 < input1.length()) {
+            int sum = 0;
+            boolean foundEven = false;
+            boolean foundOdd = false;
+
+            while (index1 < input1.length() && !(foundEven || foundOdd)) {
+                int digit = Character.getNumericValue(input1.charAt(index1));
+                sum += digit;
+                index1++;
+
+                if (sum % 2 == 0) {
+                    foundEven = true;
+                    isEven = true;
+                } else {
+                    foundOdd = true;
+                    isEven = false;
+                }
+            }
+
+            if (index2 >= 0) {
+                char alphabet = input2.charAt(index2);
+                secretKeyBuilder.append(sum).append(alphabet);
+                index2--;
+            }
+
+            if (isEven) {
+                int oddSum = 0;
+                boolean foundOddAgain = false;
+
+                while (index1 < input1.length() && !(foundOddAgain || foundEven)) {
+                    int digit = Character.getNumericValue(input1.charAt(index1));
+                    oddSum += digit;
+                    index1++;
+
+                    if (oddSum % 2 != 0) {
+                        foundOddAgain = true;
+                        isEven = false;
+                    } else {
+                        foundEven = true;
+                        isEven = true;
+                    }
+                }
+
+                if (index2 >= 0) {
+                    char oddAlphabet = input2.charAt(index2);
+                    secretKeyBuilder.append(oddSum).append(oddAlphabet);
+                    index2--;
+                }
+            }
+        }
+
+        return secretKeyBuilder.toString();
+    }
+}
+
+
+
+

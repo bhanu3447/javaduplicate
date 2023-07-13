@@ -1,0 +1,112 @@
+package two_dimesionl_arrays;
+
+import java.util.Scanner;
+
+public class Declaring2Darray
+{
+
+@SuppressWarnings("resource")
+public static void main(String[] args) 
+ {
+	int[][]a= {{1,2,3},{4,5,6},{7,8,9}};
+    int sumdia=0;
+    int sumanti=0;
+    int l=a.length;
+    
+	
+	for(int i=0;i<a.length;i++)
+	{
+//		sumdia+=a[i][i];
+		sumanti=a[i][l-1-i];
+		
+	}
+	System.out.println(sumdia);
+	System.out.println(sumanti);
+ }
+}
+//int[][]a= {{1,2,3},{4,5,6},{7,8,9}};
+//int sum=0;
+//
+//for(int i=0;i<a.length;i++)
+//{
+//	for(int j=0;j<a[i].length;j++)
+//	{
+//		if(i==j) sum+=a[i][j];
+//	}
+//}
+//System.out.println(sum);
+
+//	for(int[]s:a)
+//	{
+//		for(int z:s)
+//		{
+//			sum+=z;
+//		}
+//	}
+//	System.out.println(sum);
+// }
+// }
+//	
+//	int[][]a=new int[3][12];
+////	a[0]=new int[5];
+////	a[1]=new int[3];
+////	a[2]=new int[2];
+//	
+//	
+//	System.out.println(a[0].length);
+//	
+//	int count=0;
+//	
+//	
+//	for(int i=0;i<a.length;i++)
+//	{
+//		for(int j=0;j<a[i].length;j++)
+//		{
+//			a[i][j]=count++;
+//		}
+//	}
+//	for(int i=0;i<a.length;i++)
+//	{
+//		for(int j=0;j<a[i].length;j++)
+//		{
+//			System.out.print(a[i][j]);
+//		}
+//		System.out.println();
+//	}
+//			
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+//	
+////	int a[][]=new int [3][4];
+////	a[0][0]=1;
+////	a[0][1]=11;
+////	a[1][0]=3;
+////	a[1][1]=12;
+////	a[2][0]=1;
+////	a[2][1]=14;
+////	
+////	
+////	
+////	for(int []s:a)
+////	{
+////		for(int x:s)
+////		{
+////			System.out.print(x+" ");
+////		}
+////		System.out.println();
+////	}
+//	
+// }
+//}

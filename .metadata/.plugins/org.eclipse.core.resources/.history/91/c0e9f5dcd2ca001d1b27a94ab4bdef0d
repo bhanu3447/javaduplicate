@@ -1,0 +1,25 @@
+package comparable_comparator;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class comparable implements Comparable<comparable>
+{
+  String name;
+  String rollno;
+  int id;
+  
+  
+
+@Override
+public int compareTo(comparable o) 
+{
+	return 0;
+}
+public static void main(String[] args)
+{
+	ArrayList<comparable> a = new ArrayList<>();
+	 Collections.sort(a);
+}
+
+}

@@ -1,0 +1,83 @@
+package String;
+
+import java.util.Scanner;
+
+public class StringPrograms 
+{
+  public static void main(String[] args) 
+  {
+	 
+	  Scanner scn=new Scanner(System.in);
+	  System.out.println("enter a string");
+//	  String s=scn.nextLine();
+	  String s="MalaYaLaM";
+      
+//	  if(PalindromeCharArray(s))
+//	  {
+//		  System.out.println(s+" is a palindrome");
+//	  }
+//	  else
+//	  {
+//		  System.out.println(s+" is not a palindrome");
+//	  }
+//	  
+//	  if(PalindromeCharAt(s))
+//	  {
+//		  System.out.println(s+" is a palindrome");
+//	  }
+//	  else
+//	  {
+//		  System.out.println(s+" is not a palindrome");
+//	  }
+//	  System.out.println();
+	  
+//	  if(PalindromeStringBuilder(s))
+//	  {
+//		  System.out.println(s+" is a palindrome");
+//	  }
+//	  else
+//	  {
+//		  System.out.println(s+" is not a palindrome");
+//	  }
+	  if(PalindromeStringBuilder(s))
+	  {
+		  System.out.println(s+" is a palindrome");
+	  }
+	  else 
+	  {
+		  System.out.println(s+" is not a palindrome");
+	  }
+  }
+  public static boolean PalindromeCharArray(String s)
+  {
+	char[] c = s.toUpperCase().toCharArray();
+	int i=0;
+	int j=c.length-1;
+	while(i<j)
+	{
+	   if(c[i]!=c[j]) return false;
+	   i++;
+	   j--;
+	}
+	return true;
+  }
+  public static boolean PalindromeCharAt(String s)
+  {
+	   s.toUpperCase();
+	int i=0;
+	int j=s.length()-1;
+	
+	while(i<j)
+	{
+		if(s.charAt(i)!=s.charAt(j)) return false;
+		i++;
+		j--;
+	}
+	return true;
+  }
+  public static boolean PalindromeStringBuilder(String s)
+  {
+	  StringBuilder sb = new StringBuilder(s);
+	  return s.equals(sb.reverse().toString());
+  }
+}

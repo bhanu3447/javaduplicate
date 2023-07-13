@@ -1,0 +1,193 @@
+package linkedlist;
+
+
+
+public  class singlelinkedlist
+{
+	public static void main(String[] args)
+	{
+		linkedlist l=new linkedlist();
+		l.insertAtHead(10);
+		l.display();
+		l.insertAtIndex(20, 1);
+		l.display();
+		l.insertAtTail(25);
+		l.display();
+		l.insertAtHead(50);
+		l.display();
+		l.insertAtIndex(80,2);
+		l.display();
+		l.reverse();
+		l.display();
+		
+
+	}
+}
+	
+
+class linkedlist
+{
+  public node head=null;
+  public node tail=null;
+  int size;
+  
+  class node
+  {
+  	int data;
+  	node next;
+  	public node(int data) {
+  		super();
+  		this.data=data;
+  		this.next = null;
+  	}
+  	
+  }
+  public int getsize()
+  {
+	  return size;
+  }
+  public boolean isempty()
+  {
+	  return size==0;
+  }
+  public void insertAtHead(int k)
+  {
+	  node newnode=new node(k);
+	  newnode.next=head;
+	  head=newnode;
+	  if(tail==null)
+	  {
+		  tail=newnode;
+	  }
+	  size++;
+  }
+  public void insertAtTail(int k)
+  {
+	  node newnode=new node(k);
+	  if(isempty())
+	  {
+		  
+		  
+		  head=newnode;
+		  tail=newnode;
+	  }
+	  else
+	  {
+		  tail.next=newnode;
+		  tail=newnode;
+	  }
+//	  else
+//	  {
+//		  node curr=head;
+//		  while(curr.next!=null)
+//		  {
+//			  curr=curr.next;
+//		  }
+//		  curr.next=newnode;
+//	  }
+	  size++;
+  }
+   public void insertAtIndex(int data,int index)
+   {
+	   if(index<0||index > size) throw new IndexOutOfBoundsException("invalid index");
+	   if(index==0) insertAtHead(index);
+	   else if(index==size) insertAtTail(index);
+	   else
+	   {
+		   node newnode = new node(data);
+		   node curr=head;
+		   for(int i=1;i<index;i++)
+		   {
+			   curr=curr.next;
+		   }
+		   newnode.next=curr.next;
+		   curr.next=newnode;
+		   size++;
+	   }
+		 
+   }
+   public void deleteAtHead()
+   {
+	   if(isempty()) throw new RuntimeException("list is empty");
+	   head=head.next;
+	   if(head==null)
+	   {
+		   tail=null;
+	   }
+	   size--;
+   }
+   public void deleteAtTail()
+   {
+	   if(isempty())
+	   {
+		   throw new RuntimeException("list is empty");
+	   }
+	   if(size==1)
+	   {
+		   head=null;
+		   tail=null;
+	   }
+	   else
+	   {
+	   node curr=head;
+	   while(curr.next.next!=null)
+	   {
+		   curr=curr.next;
+	   }
+	   curr.next=null;
+	   tail=curr;
+	   }
+	   size--;
+   }
+	   
+   public void deleteAtIndex(int index)
+   {
+	   if(index<0||index>size) throw new IndexOutOfBoundsException("invalid index");
+	   if(index==0) deleteAtHead();
+	   else if(index==size-1) deleteAtTail();
+	   else
+	   {
+		   node curr=head;
+		   for(int i=1;i<index;i++)
+		   {
+			   curr=curr.next;
+		   }
+		   curr.next=curr.next.next;
+	   }
+	   size--;
+   }
+   public void display()
+   {
+	   if(isempty())
+	   {
+		   System.out.println("list is empty");
+		   return;
+	   }
+	   node curr=head;
+	   while(curr!=null)
+	   {
+		   System.out.print(curr.data+"-> ");
+		   curr=curr.next;
+	   }
+	   System.out.println();
+   }
+  public void reverse()
+  {
+	  if(isempty()||head.next==null) return;
+	  node curr=head;
+	  node next=null;
+	  node prev=null;
+	  
+	  while(curr!=null)
+	  {
+		   next= curr.next;
+		   curr.next=prev;
+		   prev=curr;
+		   curr=next;
+	  }
+	  
+	  tail=head;
+	  head=prev;
+  }
+}
+

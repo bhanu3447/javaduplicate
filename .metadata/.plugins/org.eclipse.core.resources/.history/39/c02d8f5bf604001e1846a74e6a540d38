@@ -1,0 +1,103 @@
+import java.util.Scanner;
+
+public class pattern 
+{
+  public static void main(String[] args)
+  {
+	Scanner scn=new Scanner(System.in);
+	System.out.println("enter number of rows");
+	int n=scn.nextInt();
+//	int count=0;
+//	for(int i=n;i>=1;)
+//	{
+//		if(count<i)
+//		{
+//			System.out.print("*");
+//			count++;
+//		}
+//		if(count==i)
+//		{
+//			count=0;
+//			i--;
+//			System.out.println();
+//		}
+//	}
+////	for(int i=0;i<n;i++)
+////	{
+////		for(int j=0;j<=i;j++)
+////		{
+////			System.out.print("*");
+////		}
+////		System.out.println();
+////	}
+//	for(int i=1;i<=5;)
+//	{
+//	  int j=1;
+//	  System.out.print("*");
+//	  if(i<=j)
+//	  {
+//		  i++;
+//		  System.out.println();
+//	  }
+//	  else {
+//		  System.out.print("*");
+//	  }
+//	}
+//  }
+
+//		        int rows = 5; // Number of rows in the triangle
+//		        int stars = 1; // Number of stars in the current row
+//
+//		        for (int i = 1; i <=rows; i++) {
+//		            System.out.print("* ");
+//		            if (i == stars - 1) {
+//		                System.out.println();
+//		                stars++;
+//		                i = -1;
+//		            }
+//		        }
+	
+//	  String s="*";
+//	for(int i=0;i<5;i++)
+//	{
+//		
+//		System.out.print(s);
+//		s+=" *";
+//		System.out.println();
+//	}
+////	
+	int count=0;
+	for(int i=1;i<=5;)
+	{
+		if(count<i) 
+		{
+			System.out.print("*");
+			count++;
+		}
+		if(count==i)
+		{
+			count=0;
+			System.out.println();
+			i++;
+		}
+		
+	}
+	
+//	for(int i=0;i<=n;i++)
+//	{
+//		for(int j=0;j<=n;j++)
+//		{
+//			if(i==0||i==n||i+j==n||i==j||j==n/2||i==n/2)
+//			{
+//				System.out.print("*");
+//			}
+//			else
+//			{
+//				System.out.print(" ");
+//			}
+//		}
+//		System.out.println();
+//	}
+	
+  }
+}

@@ -1,0 +1,38 @@
+package comparable_comparator;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class comparable implements Comparable<comparable>
+{
+  String name;
+  String rollno;
+  int id;
+  public comparable(String name, String rollno, int id) {
+		super();
+		this.name = name;
+		this.rollno = rollno;
+		this.id = id;
+	}
+
+  
+
+@Override
+public int compareTo(comparable o) 
+{
+	return 0;
+}
+public static void main(String[] args)
+{
+	comparable c1 = new comparable("bhanu", "8", 12);
+	comparable c2= new comparable("hari", "18", 11);
+	comparable c3 = new comparable("jaswanth", "81", 21);
+	ArrayList<comparable> a = new ArrayList<>();
+	a.add(c1);
+	a.add(c2);
+	a.add(c3);
+	 Collections.sort(a);
+	 
+}
+
+}

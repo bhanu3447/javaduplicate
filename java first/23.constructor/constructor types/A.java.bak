@@ -1,0 +1,15 @@
+class A 
+{
+	int i;
+}
+class test
+{
+	public static void main(String[] args) 
+	{
+		System.out.println(new A().i);
+		new A();
+		A a1=new A();
+		System.out.println(a1.i);
+
+	}
+}

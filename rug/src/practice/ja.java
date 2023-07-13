@@ -1,0 +1,14 @@
+package practice;
+
+public class ja 
+{
+	static String s=null;
+  public static void main(String[] args)
+  {
+	
+	int a;
+	System.out.println();
+
+
+ }
+}

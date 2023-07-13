@@ -1,0 +1,32 @@
+package comparable_comparator;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class comparable
+{
+//  public static void main(String[] args) 
+//  {
+//	int []a= {8,12,9,1,68,78};
+//	Arrays.sort(a);
+//	for(int s:a)
+//	{
+//	System.out.println(s);
+//	}
+	
+	
+	
+	
+    public static void main(String[] args) 
+    {
+		String []a= {"bhanu","xavier","prakash","cherry","yaswanth"};
+		Arrays.sort(a);
+		for(String s:a)
+		{
+		System.out.println(s);
+		}
+		
+    }
+}

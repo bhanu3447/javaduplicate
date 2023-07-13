@@ -1,0 +1,32 @@
+package two_dimesionl_arrays;
+
+import java.util.Scanner;
+
+public class Declaring2Darray
+{
+
+@SuppressWarnings("resource")
+public static void main(String[] args) 
+ {
+	int a[][]=new int [3][4];
+	a[0][0]=1;
+	a[0][1]=11;
+	a[1][0]=3;
+	a[1][1]=12;
+	a[2][0]=1;
+	a[2][1]=14;
+	a[2][2]=14;
+	a[2][11]=14;
+	
+	
+	for(int []s:a)
+	{
+		for(int x:s)
+		{
+			System.out.print(x+" ");
+		}
+		System.out.println();
+	}
+	
+ }
+}

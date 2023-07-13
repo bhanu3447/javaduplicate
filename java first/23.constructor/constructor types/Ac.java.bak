@@ -1,0 +1,24 @@
+class Ac
+{
+	int temp;
+	public Ac(int temp)
+	{
+		this.temp=temp;
+	}
+     static void displayTemperature()
+	{
+		System.out.println(temp);
+	}
+}
+class AcProgram
+{
+	public static void main(String[] args)
+	{
+		Ac a1=new Ac(20);
+		a1.displayTemperature();
+		Ac a2=new Ac(24);
+		a2.displayTemperature();
+		Ac a3=new Ac(22);
+		a3.displayTemperature();
+	}
+}
